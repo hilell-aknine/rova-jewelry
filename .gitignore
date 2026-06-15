@@ -1,0 +1,23 @@
+# --- ROVA · publish ONLY the public static site (index.html + assets/) ---
+# project brain / internal docs (never public)
+SKILL.md
+CLAUDE.md
+primer.md
+hindsight.md
+project_config.json
+מה-זה.txt
+start_claude.bat
+
+# tooling + experiments (not part of the public site)
+tools/
+sandbox/
+
+# secrets / env (safety)
+.secrets/
+*.env
+*.key
+
+# OS / misc
+Thumbs.db
+.DS_Store
+desktop.ini
