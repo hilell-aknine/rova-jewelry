@@ -743,15 +743,16 @@
   .scrub-stage::before{
     content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
     background:
-      linear-gradient(to top,rgba(10,8,7,.66) 0%,rgba(10,8,7,.30) 18%,rgba(10,8,7,0) 44%),
-      linear-gradient(to bottom,rgba(10,8,7,.34),transparent 14%);
+      linear-gradient(to top,rgba(10,8,7,.84) 0%,rgba(10,8,7,.46) 22%,rgba(10,8,7,0) 50%),
+      linear-gradient(to bottom,rgba(10,8,7,.38),transparent 14%),
+      radial-gradient(85% 60% at 88% 92%,rgba(10,8,7,.55),transparent 62%);
   }
   /* bottom-right text cluster */
   .scrub-overlay{position:absolute;inset:auto;top:auto;left:auto;right:clamp(28px,5vw,54px);bottom:clamp(54px,8vh,64px);z-index:4;display:block;text-align:right;max-width:min(640px,80vw);padding:0;pointer-events:none}
   .scrub-eyebrow{display:block;font-family:'Heebo',sans-serif;font-size:10.5px;font-weight:300;letter-spacing:.42em;color:var(--champagne);opacity:.85;margin:0 0 22px}
   .scrub-eyebrow::before,.scrub-eyebrow::after{display:none}
   .scrub-caps{display:grid}
-  .scrub-cap{position:static;grid-area:1/1;inset:auto;text-align:right;font-family:'Frank Ruhl Libre',serif;font-weight:400;font-size:clamp(46px,8vw,118px);line-height:.92;letter-spacing:-.01em;color:var(--cream);opacity:0;transform:none;transition:opacity .7s var(--ease);text-shadow:0 4px 30px rgba(0,0,0,.6)}
+  .scrub-cap{position:static;grid-area:1/1;inset:auto;text-align:right;font-family:'Frank Ruhl Libre',serif;font-weight:400;font-size:clamp(46px,8vw,118px);line-height:.92;letter-spacing:-.01em;color:var(--cream);opacity:0;transform:none;transition:opacity .7s var(--ease);text-shadow:0 2px 6px rgba(0,0,0,.55),0 8px 40px rgba(0,0,0,.7)}
   .scrub-cap.on{opacity:1}
   .scrub-cap em{display:block;font-family:var(--latin);font-style:italic;font-weight:400;font-size:clamp(22px,3vw,40px);color:var(--champagne);letter-spacing:.02em;margin-top:14px;opacity:.92;text-shadow:0 2px 18px rgba(0,0,0,.6)}
   /* spec chips — faintest hairline labels, right aligned */
@@ -766,8 +767,8 @@
   .rs-nav ul{flex-direction:row;gap:18px;align-items:center}
   .rs-nav button{flex-direction:row-reverse;align-items:baseline;gap:5px;padding:0;opacity:.55;direction:ltr;text-shadow:0 2px 12px rgba(0,0,0,.7)}
   .rs-nav button::after{display:none}
-  .rs-nav .rs-n{font-family:var(--latin);font-size:13px;letter-spacing:.18em;color:var(--dim);opacity:.6}
-  .rs-nav .rs-t{font-size:9.5px;letter-spacing:.22em;color:var(--dim)}
+  .rs-nav .rs-n{font-family:var(--latin);font-size:15px;letter-spacing:.18em;color:var(--dim);opacity:.7}
+  .rs-nav .rs-t{font-size:11px;letter-spacing:.2em;color:var(--dim)}
   .rs-nav button:hover{opacity:1}
   .rs-nav button[aria-current="true"]{opacity:1}
   .rs-nav button[aria-current="true"] .rs-n{color:var(--champagne);opacity:1}
@@ -812,7 +813,7 @@
     .scrub{height:220vh}
     .scrub-video{-webkit-mask-image:none;mask-image:none}
     /* mobile: keep the scrub clean — medallion + caption + scroll/drag only */
-    .rs-nav,.rs-callouts{display:none}
+    .rs-callouts{display:none} /* spec chips: desktop only · chapter numerals (.rs-nav) stay visible on mobile */
     .hero::before{inset:16px}
     .fab{width:54px;height:54px;bottom:18px;left:18px}
     .fab svg{width:28px;height:28px}
@@ -869,7 +870,7 @@
       </div>
     </div>
     <div class="gem-stage">
-      <img class="hero-photo" width="1280" height="720" src="assets/hero-keyframe.jpg" alt="טבעת אירוסין מויסונייט נוצצת בכסף טהור 925" />
+      <img class="hero-photo" width="1280" height="720" src="https://cdn.jsdelivr.net/gh/hilell-aknine/rova-jewelry@main/assets/hero-keyframe.jpg" alt="טבעת אירוסין מויסונייט נוצצת בכסף טהור 925" />
     </div>
   </div>
 </section>
@@ -880,10 +881,10 @@
     <!-- drag surface: round handle over the medallion; cursor:grab. Horizontal drag scrubs the active clip -->
     <div class="scrub-frame" id="scrubFrame" role="slider" aria-label="גררו לסיבוב התכשיט" tabindex="0">
       <!-- 4 stacked clips; crossfade via .active (opacity). Each: muted, playsinline, preload metadata, poster -->
-      <video class="scrub-video active" data-i="0" src="assets/hero-scrub.mp4"     poster="assets/hero-keyframe.jpg"   muted playsinline preload="metadata" aria-hidden="true"></video>
-      <video class="scrub-video"        data-i="1" src="assets/scrub-necklace.mp4" poster="assets/coll-necklaces.jpg"  muted playsinline preload="metadata" aria-hidden="true"></video>
-      <video class="scrub-video"        data-i="2" src="assets/scrub-earrings.mp4" poster="assets/coll-earrings.jpg"   muted playsinline preload="metadata" aria-hidden="true"></video>
-      <video class="scrub-video"        data-i="3" src="assets/scrub-macro.mp4"    poster="assets/scrub-macro.jpg"     muted playsinline preload="metadata" aria-hidden="true"></video>
+      <video class="scrub-video active" data-i="0" src="https://cdn.jsdelivr.net/gh/hilell-aknine/rova-jewelry@main/assets/hero-scrub.mp4"     poster="https://cdn.jsdelivr.net/gh/hilell-aknine/rova-jewelry@main/assets/hero-keyframe.jpg"   muted playsinline preload="auto" aria-hidden="true"></video>
+      <video class="scrub-video"        data-i="1" src="https://cdn.jsdelivr.net/gh/hilell-aknine/rova-jewelry@main/assets/scrub-necklace.mp4" poster="https://cdn.jsdelivr.net/gh/hilell-aknine/rova-jewelry@main/assets/coll-necklaces.jpg"  muted playsinline preload="auto" aria-hidden="true"></video>
+      <video class="scrub-video"        data-i="2" src="https://cdn.jsdelivr.net/gh/hilell-aknine/rova-jewelry@main/assets/scrub-earrings.mp4" poster="https://cdn.jsdelivr.net/gh/hilell-aknine/rova-jewelry@main/assets/coll-earrings.jpg"   muted playsinline preload="auto" aria-hidden="true"></video>
+      <video class="scrub-video"        data-i="3" src="https://cdn.jsdelivr.net/gh/hilell-aknine/rova-jewelry@main/assets/scrub-macro.mp4"    poster="https://cdn.jsdelivr.net/gh/hilell-aknine/rova-jewelry@main/assets/scrub-macro.jpg"     muted playsinline preload="auto" aria-hidden="true"></video>
       <span class="scrub-grab" aria-hidden="true"></span>
     </div>
     <!-- chapter navigation rail (RTL) — clickable, jumps via RovaScrub.goTo -->
@@ -956,10 +957,10 @@
       <p>מטבעות אירוסין ועד עגילי יום-יום. כל פריט משובץ ביד בכסף טהור 925 ומגיע באריזת מתנה יוקרתית.</p>
     </div>
     <div class="coll-grid">
-      <a class="coll reveal" href="#contact"><img class="coll-art" width="960" height="1280" src="assets/coll-rings.jpg" alt="טבעת אירוסין מויסונייט בכסף טהור 925" loading="lazy" /><div class="coll-label"><h3>טבעות</h3><span>אירוסין · סוליטר · יום-יום</span></div></a>
-      <a class="coll reveal" href="#contact"><img class="coll-art" width="960" height="1280" src="assets/coll-necklaces.jpg" alt="שרשרת מויסונייט עם תליון סוליטר בכסף 925" loading="lazy" /><div class="coll-label"><h3>שרשראות</h3><span>תליון סוליטר נצחי</span></div></a>
-      <a class="coll reveal" href="#contact"><img class="coll-art" width="960" height="1280" src="assets/coll-earrings.jpg" alt="עגילי מויסונייט נוצצים בכסף טהור 925" loading="lazy" /><div class="coll-label"><h3>עגילים</h3><span>צמודים · נטיפים</span></div></a>
-      <a class="coll reveal" href="#contact"><img class="coll-art" width="960" height="1280" src="assets/coll-bracelets.jpg" alt="צמיד טניס מויסונייט בכסף טהור 925" loading="lazy" /><div class="coll-label"><h3>צמידים</h3><span>טניס · עדינים</span></div></a>
+      <a class="coll reveal" href="#contact"><img class="coll-art" width="960" height="1280" src="https://cdn.jsdelivr.net/gh/hilell-aknine/rova-jewelry@main/assets/coll-rings.jpg" alt="טבעת אירוסין מויסונייט בכסף טהור 925" loading="lazy" /><div class="coll-label"><h3>טבעות</h3><span>אירוסין · סוליטר · יום-יום</span></div></a>
+      <a class="coll reveal" href="#contact"><img class="coll-art" width="960" height="1280" src="https://cdn.jsdelivr.net/gh/hilell-aknine/rova-jewelry@main/assets/coll-necklaces.jpg" alt="שרשרת מויסונייט עם תליון סוליטר בכסף 925" loading="lazy" /><div class="coll-label"><h3>שרשראות</h3><span>תליון סוליטר נצחי</span></div></a>
+      <a class="coll reveal" href="#contact"><img class="coll-art" width="960" height="1280" src="https://cdn.jsdelivr.net/gh/hilell-aknine/rova-jewelry@main/assets/coll-earrings.jpg" alt="עגילי מויסונייט נוצצים בכסף טהור 925" loading="lazy" /><div class="coll-label"><h3>עגילים</h3><span>צמודים · נטיפים</span></div></a>
+      <a class="coll reveal" href="#contact"><img class="coll-art" width="960" height="1280" src="https://cdn.jsdelivr.net/gh/hilell-aknine/rova-jewelry@main/assets/coll-bracelets.jpg" alt="צמיד טניס מויסונייט בכסף טהור 925" loading="lazy" /><div class="coll-label"><h3>צמידים</h3><span>טניס · עדינים</span></div></a>
     </div>
     <p class="ph-note">לכל פריט יש התאמה אישית מלאה. דברו איתנו בוואטסאפ ונמצא לכם את המושלם.</p>
   </div>
@@ -1007,7 +1008,7 @@
     <div class="lead-card reveal">
       <h3>רגע אחד ואנחנו איתכם</h3>
       <p class="lead-sub">ללא התחייבות · מענה אנושי, לא בוט</p>
-      <form id="leadForm">
+      <form id="leadForm" novalidate>
         <div class="field"><label for="lname">שם מלא</label><input id="lname" type="text" placeholder="השם שלכם" required /></div>
         <div class="field"><label for="lphone">טלפון</label><input id="lphone" type="tel" inputmode="tel" autocomplete="tel" placeholder="050-0000000" required /></div>
         <div class="field"><label for="linterest">מה מעניין אתכם?</label>
@@ -1026,7 +1027,7 @@
           <svg class="wa-ico" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.521 5.26l-.999 3.648 3.667-.957z"/></svg>
           שלחו ונחזור אליכם בוואטסאפ
         </button>
-        <div class="form-status" id="formStatus" role="status" aria-live="polite" aria-atomic="true"></div>
+        <div class="form-status" id="formStatus" role="alert" aria-live="assertive" aria-atomic="true"></div>
       </form>
       <div class="form-or">— או —</div>
       <a class="wa-direct" id="waDirect" href="#">
@@ -1099,7 +1100,7 @@
   // wire all direct whatsapp links
   ["fab","waDirect","waFoot"].forEach(id=>{
     const el=document.getElementById(id);
-    if(el) el.href=waLink();
+    if(el){ el.href=waLink(); el.target="_blank"; el.rel="noopener"; }
   });
 
   // year
@@ -1138,7 +1139,8 @@
         const first = nameBad?fName : phoneBad?fPhone : fInterest;
         show(phoneBad&&!nameBad ? "נא להזין מספר טלפון ישראלי תקין (למשל 050-0000000)."
              : "נא למלא שם, טלפון תקין ותחום עניין.","err");
-        first.focus();
+        first.focus({preventScroll:true});
+        st.scrollIntoView({behavior:"smooth",block:"center"}); // bring the error into view
         return;
       }
       // --- loading state ---
